@@ -1,52 +1,64 @@
 //To Do Paper
-alert("Here will be my project");
+alert(`Here will 
+	be my project`);
 
-var toDoItems = [];
 
-var toDoItemTest = {
+
+let toDoItemTest = {
 	text:"DO",
 	completed: false,
 	id: 1
 	
 }
 
-function addToDoItem (toDoItem ) {
-	//console.log(toDoItem);
-	// body...
-	if (toDoItem.text== undefined && toDoItem.complete== undefined && toDoItem.id== undefined && toDoItem.text ==="")
+let toDoItemTest2 = {
+	text:"sameID",
+	completed: false,
+	id: 1
+	
+}
+
+function addToDoItem (toDoItem = toDoItemTest) {
+	if (toDoItem.text== undefined || toDoItem.completed== undefined || toDoItem.id== undefined || toDoItem.text ==="")
 		return false;
-	for(var i=0;i<toDoItems.length;i++){
-		if (toDoItem.id === toDoItems[i].id)
+	
+	for(let i=0;i<toDoItems.length;i++){
+		if (toDoItem.id === toDoItems[i].id){
 			return false;
 			break;
+		}
 	}
+
 	if (toDoItem.text==="")
 	return false;
 	else {
 		toDoItems.push(toDoItem);
+		console.log(toDoItems);
 		return true;
 	}
 }
 
-function viewToDoList (itemsType){
-	var obj = [];
+function viewToDoList (itemsType = "all"){
+	let obj = [];
 	if (itemsType === ""){
 		return false;
 	}
 	
 	else if (itemsType==="completed"){
-		toDoItems.forEach( function(element, index) {
+		/*toDoItems.forEach( function(element, index) {
 			if(element.completed)
 			obj.push(element);
+		});*/
+		obj = toDoItems.filter(function(element){
+			return element.completed == true
 		});
 	}
 	else if (itemsType==="not_completed"){
-		toDoItems.forEach( function(element, index) {
-			if(!element.completed)
-			obj.push(element);
+		obj = toDoItems.filter(function(element){
+			return element.completed == false
 		});
 	}
-	else {
+	else if (itemsType==="all"){
 		toDoItems.forEach( function(element, index) {
 			obj.push(element);
 		});
@@ -62,25 +74,29 @@ function editToDoItem(toDoItemId, newText){
 			if(toDoItemId===element.id)
 				element.text=newText;
 		});
+		console.log(toDoItems);
 		return true;
 	}
 }
 
 function deleteToDoItem(toDoItemId){
-	for(var i=0;i<toDoItems.length;i++){
+	let isDeleted=false;
+	for(let i=0;i<toDoItems.length;i++){
 		if (toDoItems[i].id===toDoItemId){
-			toDoItems[i] = null;
-			delete toDoItems[i];	
-			return true;
+			toDoItems.splice(i,1);	
+			isDeleted = true;
+			console.log(toDoItems);
 			break;
 			}
 		}
+	return isDeleted;
 }
 
 function completeToDoItem(toDoItemId){
-	for(var i=0;i<toDoItems.length;i++){
+	for(let i=0;i<toDoItems.length;i++){
 		if (toDoItems[i].id===toDoItemId){
 			toDoItems[i].completed=true;
+			console.log(toDoItems);
 			break;
 			}
 		}
@@ -90,13 +106,6 @@ function completeToDoItem(toDoItemId){
 
 
 
-console.log(addToDoItem(toDoItemTest));
-console.log(addToDoItem(toDoItemTest));
 
-console.log(editToDoItem(1,"Hey"));
-//console.log(deleteToDoItem(1));
 
-completeToDoItem(1);
-
-console.log(viewToDoList("completed"));
 
