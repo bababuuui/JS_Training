@@ -1,0 +1,14 @@
+body{
+	background: grey;
+}
+.todo{
+	display: inline-block;
+	width: 40%;
+	border-style: solid;
+	border-color: blue;
+	margin: 30px;
+	padding: 10px;
+	text-align: center;
+	font-weight: bold;
+
+}

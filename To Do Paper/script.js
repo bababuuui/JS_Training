@@ -2,10 +2,12 @@
 //alert("Here will be my project");
 let toDoItems = [];
 
-var loadToDos = function() {
+var start = function() {
 		$.getJSON( "todos.json", function(data) {
 			console.log(data.data);	
 			toDoItems = data.data;
+		}).done(function(){
+			viewToDoListDom("all");
 		});
 	};
-loadToDos();
+start();

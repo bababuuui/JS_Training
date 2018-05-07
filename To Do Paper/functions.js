@@ -5,16 +5,16 @@ alert(`Here will
 
 
 let toDoItemTest = {
-	text:"DO",
+	text:"test1",
 	completed: false,
 	id: 1
 	
 }
 
 let toDoItemTest2 = {
-	text:"sameID",
-	completed: false,
-	id: 1
+	text:"test2",
+	completed: true,
+	id: 5
 	
 }
 
@@ -66,6 +66,14 @@ function viewToDoList (itemsType = "all"){
 	return obj;
 }
 
+/*function isIdPresent(toDoItemId){
+	toDoItems.forEach((element, index) => {
+		if (toDoItemId===element.id)
+			return true;
+		else
+			return false;
+	});
+}*/
 function editToDoItem(toDoItemId, newText){
 	if(newText==="")
 		return false;
