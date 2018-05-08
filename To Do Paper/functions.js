@@ -1,6 +1,5 @@
-//To Do Paper
-alert(`Here will 
-	be my project`);
+//
+//alert(`Here will 	be my project`);
 
 
 
@@ -17,6 +16,7 @@ let toDoItemTest2 = {
 	id: 5
 	
 }
+let toDoItems = [];
 
 function addToDoItem (toDoItem = toDoItemTest) {
 	if (toDoItem.text== undefined || toDoItem.completed== undefined || toDoItem.id== undefined || toDoItem.text ==="")
@@ -66,29 +66,33 @@ function viewToDoList (itemsType = "all"){
 	return obj;
 }
 
-/*function isIdPresent(toDoItemId){
-	toDoItems.forEach((element, index) => {
-		if (toDoItemId===element.id)
-			return true;
-		else
-			return false;
+
+
+function isIdPresent(toDoItemId){
+	flag = false;
+	toDoItems.forEach( function(element, index) {
+		if(toDoItemId===element.id)
+			flag = true;
 	});
-}*/
+	return flag;
+}
 function editToDoItem(toDoItemId, newText){
-	if(newText==="")
-		return false;
+	let isEdited;
+	if((newText==="")||(!isIdPresent(toDoItemId)))
+		isEdited= false;
 	else{
 		toDoItems.forEach( function(element, index) {
 			if(toDoItemId===element.id)
 				element.text=newText;
 		});
 		console.log(toDoItems);
-		return true;
+		isEdited=true;
 	}
+	return isEdited;
 }
 
 function deleteToDoItem(toDoItemId){
-	let isDeleted=false;
+	let isDeleted=false;	
 	for(let i=0;i<toDoItems.length;i++){
 		if (toDoItems[i].id===toDoItemId){
 			toDoItems.splice(i,1);	
