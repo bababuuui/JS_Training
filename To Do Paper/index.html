@@ -7,7 +7,35 @@
 	<link rel="stylesheet" href="style.css">
 </head> 
 <body>
-	<div id = "todo-items"></div>
+	<div align="center">
+		<form id="selectView">
+		  <p>Select type:</p>
+		  <label>  All    </label>
+		  <input type="radio" name="view" value ="all" checked ><br>
+		  <label>  Completed    </label>
+		  <input type="radio" name="view" value="completed" ><br>
+		  <label>  Not completed   </label>
+		  <input type="radio" name="view" value="not_completed" > <br>
+		</form>
+	</div>
+	
+
+	<div id ="addBlock">
+		<form>
+			<label>ID:</label>
+			<br>
+			<input type="text" name="" width="50	">
+			<br>
+			<label>Text:</label>
+			<br>
+			<input type="text" name="">
+			<br>
+			<input type="button" name="addBtn" value="addToDo" >
+		</form>
+	</div>
+	<div id = "todo-items">
+		
+	</div>
 </body>
 
 

@@ -1,18 +1,58 @@
 body{
-	background: grey;
+	background: #b3ecff;
+}
+#todo-items{
+	width: 100%;
+	margin-top: 50px;	
 }
 .todo{
 	display: inline-block;
-	width: 40%;
+	width: 35%;
 	border-style: solid;
 	border-color: blue;
-	margin: 30px;
+	margin:50px;
 	padding: 10px;
 	text-align: center;
 	font-weight: bold;
 
 }
 
+.todo p {
+text-align: left;
+}
+
 .textToDo{
-	color:yellow;
+	color:#000080;
+	font-size: 18pt;
+
+
+}
+.textToDo a{
+	text-align: right;
+}
+
+#deleteCTA{
+	float: right;
+	font-size: 24pt;
+	color: red;
+	text-decoration: none;
+}
+#deleteCTA:hover{
+	color: white;
+}
+#addBlock{
+	margin-top: 30px;
+	background-color:#ffffe6;
+	width: 300px;
+	height: 200px;
+	padding-left: 20px;
+	padding-top: 20px;
+	border-style: solid;
+	border-color: blue;
+}
+#addBlock input {
+	margin-bottom: 20px;
+}
+#selectView{
+	font-weight: bold;
 }

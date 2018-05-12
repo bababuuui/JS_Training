@@ -8,14 +8,15 @@ var start = function() {
 			toDoItems = data.data;
 		}).done(function(){
 			//test
-			completeToDoItem(11);
-			viewToDoListDom("all");
-			editToDoItemDom(2,"Changed");
-			editToDoItemDom(2,"");// invaild text
-			addToDoItemDom(toDoItemTest);
-			addToDoItemDom(toDoItemTest); // attempt to add todo with the same id
-			deleteToDoItemDom(13);
-			deleteToDoItemDom(100); // ID doesn't exist
+			//completeToDoItem(11);
+			//viewToDoListDom("all");
+			viewToDoListDom(viewToDoList("all"));
+			//editToDoItemDom(2,"Changed");
+			//editToDoItemDom(2,"");// invaild text
+			//addToDoItemDom(toDoItemTest);
+			//addToDoItemDom(toDoItemTest2); // attempt to add todo with the same id
+			//deleteToDoItemDom(13);
+			//deleteToDoItemDom(100); // ID doesn't exist
 
 		});
 	};

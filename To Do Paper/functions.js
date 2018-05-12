@@ -6,33 +6,42 @@
 let toDoItemTest = {
 	text:"test1",
 	completed: false,
-	id: 1
+	id: 11
 	
 }
 
 let toDoItemTest2 = {
 	text:"test2",
 	completed: true,
-	id: 5
+	id: 12
 	
 }
 let toDoItems = [];
 
+
 function addToDoItem (toDoItem = toDoItemTest) {
-	if (toDoItem.text== undefined || toDoItem.completed== undefined || toDoItem.id== undefined || toDoItem.text ==="")
+	if (toDoItem.text== undefined || toDoItem.completed== undefined   )
 		return false;
-	
+	if (!toDoItem.id){
+		alert("ID must be number")
+		return false;
+	} 
+
 	for(let i=0;i<toDoItems.length;i++){
 		if (toDoItem.id === toDoItems[i].id){
+			alert(`TODO with ID = ${toDoItem.id}  already exists`);
 			return false;
 			break;
 		}
 	}
 
-	if (toDoItem.text==="")
-	return false;
+	if(toDoItem.text ===""){
+		alert("Please input what you need TODO in text field");
+		return false;
+	}
 	else {
-		toDoItems.push(toDoItem);
+		
+		toDoItems.unshift(toDoItem);
 		console.log(toDoItems);
 		return true;
 	}
